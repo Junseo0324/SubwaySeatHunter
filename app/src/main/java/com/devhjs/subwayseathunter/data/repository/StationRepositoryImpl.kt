@@ -2,6 +2,7 @@ package com.devhjs.subwayseathunter.data.repository
 
 import com.devhjs.subwayseathunter.data.local.dao.StationDao
 import com.devhjs.subwayseathunter.data.local.entity.StationEntity
+import com.devhjs.subwayseathunter.data.source.AssetDataSource
 import com.devhjs.subwayseathunter.data.util.CsvParser
 import com.devhjs.subwayseathunter.data.dto.StationCsvDto
 import com.devhjs.subwayseathunter.domain.repository.StationRepository
@@ -12,13 +13,13 @@ import javax.inject.Inject
 class StationRepositoryImpl @Inject constructor(
     private val stationDao: StationDao,
     private val stationCsvParser: CsvParser<StationCsvDto>,
-    private val assetInputStreamProvider: () -> InputStream // For testing purposes to inject stream
+    private val assetDataSource: AssetDataSource
 ) : StationRepository {
 
     override suspend fun loadInitialData() {
         val existingData = stationDao.getAllStations()
         if (existingData.isEmpty()) {
-            val inputStream = assetInputStreamProvider()
+            val inputStream = assetDataSource.openStationAsset()
             val stationDtos = stationCsvParser.parse(inputStream)
             
             val stationEntities = stationDtos.map { dto ->
