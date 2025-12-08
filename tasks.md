@@ -1,16 +1,16 @@
 # 프로젝트 할 일 목록 (Test-Driven Data Layer)
 
 ## 0. 프로젝트 초기 설정 및 테스트 환경 구축
-- [ ] **기본 프로젝트 설정**
-    - [ ] Clean Architecture 패키지 구조 (Presentation, Domain, Data) 설정
-    - [ ] Hilt (Dependency Injection) 설정
-    - [ ] Kotlin Coroutines & Flow 설정
-- [ ] **테스트 의존성 추가**
-    - [ ] JUnit4, MockK (Mocking)
-    - [ ] com.google.truth (Assertions)
-    - [ ] kotlinx-coroutines-test (TestDispatcher, runTest)
-    - [ ] app.cash.turbine (Flow Testing)
-    - [ ] okhttp3:mockwebserver (Network Testing)
+- [x] **기본 프로젝트 설정**
+    - [x] Clean Architecture 패키지 구조 (Presentation, Domain, Data) 설정
+    - [x] Hilt (Dependency Injection) 설정
+    - [x] Kotlin Coroutines & Flow 설정
+- [x] **테스트 의존성 추가**
+    - [x] JUnit4, MockK (Mocking)
+    - [x] com.google.truth (Assertions)
+    - [x] kotlinx-coroutines-test (TestDispatcher, runTest)
+    - [x] app.cash.turbine (Flow Testing)
+    - [x] okhttp3:mockwebserver (Network Testing)
 
 ## 1. 정적 데이터 레이어 (CSV -> Room) 구현
 > **목표**: 오프라인 통계 및 역 정보를 CSV에서 파싱하여 로컬 DB에 저장. 파싱 로직과 DB 저장 로직의 단위 테스트 보장.
@@ -20,7 +20,7 @@
     - [ ] 샘플 CSV 데이터를 주입받아 올바른 리스트 객체로 변환하는지 검증
     - [ ] 잘못된 형식의 CSV 처리 테스트
 - [ ] `AssetDataSource` 및 `CsvParser` 구현
-- [ ] DTO 정의 (`StationCsvDto`, `CongestionCsvDto`)
+- [x] DTO 정의 (`StationCsvDto`, `CongestionCsvDto`)
 
 ### 1.2 로컬 데이터베이스 (Room)
 - [ ] Entities 정의 (`StationEntity`, `CongestionEntity`)
