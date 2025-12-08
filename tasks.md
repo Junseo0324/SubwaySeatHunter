@@ -30,6 +30,7 @@
 - [x] `AppDatabase` 및 DAO 구현 (`StationDao`, `CongestionDao`)
 
 ### 1.3 Repository (CSV -> DB 적재)
+- [x] Domain Model 및 Repository Interface 정의
 - [ ] **[Test]** `StationRepository` 초기 데이터 로드 테스트
     - [ ] "DB가 비어있을 때 CSV 파싱 후 저장하는가?" 시나리오 검증
     - [ ] Repository가 Domain Model로 올바르게 변환하여 반환하는지 검증
