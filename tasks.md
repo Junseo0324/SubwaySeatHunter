@@ -23,7 +23,7 @@
 - [x] DTO 정의 (`StationCsvDto`, `CongestionCsvDto`)
 
 ### 1.2 로컬 데이터베이스 (Room)
-- [ ] Entities 정의 (`StationEntity`, `CongestionEntity`)
+- [x] Entities 정의 (`StationEntity`, `CongestionEntity`)
 - [ ] **[Test]** DAO 유닛 테스트 작성 (In-Memory Database)
     - [ ] `insert` 및 `get` 동작 검증
     - [ ] 대량 데이터 삽입 시 성능/정합성 확인
