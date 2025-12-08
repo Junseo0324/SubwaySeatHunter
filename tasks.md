@@ -19,7 +19,7 @@
 - [x] **[Test]** CSV 파서 유닛 테스트 작성
     - [x] 샘플 CSV 데이터를 주입받아 올바른 리스트 객체로 변환하는지 검증
     - [x] 잘못된 형식의 CSV 처리 테스트
-- [ ] `AssetDataSource` 및 `CsvParser` 구현
+- [x] `AssetDataSource` 및 `CsvParser` 구현
 - [x] DTO 정의 (`StationCsvDto`, `CongestionCsvDto`)
 
 ### 1.2 로컬 데이터베이스 (Room)
