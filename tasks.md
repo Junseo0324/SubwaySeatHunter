@@ -30,11 +30,12 @@
 - [x] `AppDatabase` 및 DAO 구현 (`StationDao`, `CongestionDao`)
 
 ### 1.3 Repository (CSV -> DB 적재)
-- [ ] **[Test]** `StationRepository` 초기 데이터 로드 테스트
-    - [ ] "DB가 비어있을 때 CSV 파싱 후 저장하는가?" 시나리오 검증
-    - [ ] Repository가 Domain Model로 올바르게 변환하여 반환하는지 검증
-- [ ] `StationRepositoryImpl` 구현
-    - [ ] `RoomCallback` 또는 `Worker`를 통한 초기 데이터 시딩(Seeding) 로직
+- [x] Domain Model 및 Repository Interface 정의
+- [x] **[Test]** `StationRepository` 초기 데이터 로드 테스트
+    - [x] "DB가 비어있을 때 CSV 파싱 후 저장하는가?" 시나리오 검증
+    - [x] Repository가 Domain Model로 올바르게 변환하여 반환하는지 검증
+- [x] `StationRepositoryImpl` 구현
+- [x] `RoomCallback` 또는 `Worker`를 통한 초기 데이터 시딩(Seeding) 로직
 
 ## 2. 실시간 데이터 레이어 (Network) 구현
 > **목표**: 서울시 API 연동. MockWebServer를 사용하여 네트워크 응답 케이스(성공, 실패, 이상한 데이터)를 확실하게 테스트.
