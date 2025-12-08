@@ -24,10 +24,10 @@
 
 ### 1.2 로컬 데이터베이스 (Room)
 - [x] Entities 정의 (`StationEntity`, `CongestionEntity`)
-- [ ] **[Test]** DAO 유닛 테스트 작성 (In-Memory Database)
-    - [ ] `insert` 및 `get` 동작 검증
-    - [ ] 대량 데이터 삽입 시 성능/정합성 확인
-- [ ] `AppDatabase` 및 DAO 구현 (`StationDao`, `CongestionDao`)
+- [x] **[Test]** DAO 유닛 테스트 작성 (In-Memory Database)
+    - [x] `insert` 및 `get` 동작 검증
+    - [x] 대량 데이터 삽입 시 성능/정합성 확인
+- [x] `AppDatabase` 및 DAO 구현 (`StationDao`, `CongestionDao`)
 
 ### 1.3 Repository (CSV -> DB 적재)
 - [ ] **[Test]** `StationRepository` 초기 데이터 로드 테스트

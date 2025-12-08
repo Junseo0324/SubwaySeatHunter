@@ -58,6 +58,7 @@ truth = { group = "com.google.truth", name = "truth", version = "1.4.2" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 turbine = { group = "app.cash.turbine", name = "turbine", version = "1.0.0" }
 mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "okhttp" }
+robolectric = { group = "org.robolectric", name = "robolectric", version = "4.11.1" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
