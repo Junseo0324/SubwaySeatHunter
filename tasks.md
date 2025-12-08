@@ -16,9 +16,9 @@
 > **목표**: 오프라인 통계 및 역 정보를 CSV에서 파싱하여 로컬 DB에 저장. 파싱 로직과 DB 저장 로직의 단위 테스트 보장.
 
 ### 1.1 CSV 파싱 로직 (Test First)
-- [ ] **[Test]** CSV 파서 유닛 테스트 작성
-    - [ ] 샘플 CSV 데이터를 주입받아 올바른 리스트 객체로 변환하는지 검증
-    - [ ] 잘못된 형식의 CSV 처리 테스트
+- [x] **[Test]** CSV 파서 유닛 테스트 작성
+    - [x] 샘플 CSV 데이터를 주입받아 올바른 리스트 객체로 변환하는지 검증
+    - [x] 잘못된 형식의 CSV 처리 테스트
 - [ ] `AssetDataSource` 및 `CsvParser` 구현
 - [x] DTO 정의 (`StationCsvDto`, `CongestionCsvDto`)
 
