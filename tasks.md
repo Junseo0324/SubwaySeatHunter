@@ -48,16 +48,19 @@
 - [x] `SubwayArrivalResponse` DTO 구현
 
 ### 2.2 Retrofit Service (MockWebServer)
-- [ ] **[Test]** Retrofit Service 유닛 테스트
-    - [ ] `MockWebServer`로 200 OK 응답 시 호출 성공 검증
-    - [ ] 40x, 50x 에러 응답 시 예외 처리 검증
-- [ ] `SubwayApiService` 인터페이스 및 Retrofit Client 구현 (`OkHttp` Interceptor 설정 포함)
+- [x] **[Test]** Retrofit Service 유닛 테스트
+    - [x] MockWebServer로 가짜 응답(200 OK) 내려주기
+    - [x] 요청 URL 및 파라미터 검증 (`apiKey`, `stationName`)
+- [x] `SubwayApiService` 인터페이스 정의
+- [x] Hilt `NetworkModule` 설정 (OkHttp, Retrofit, Moshi)
 
-### 2.3 RemoteDataSource & Repository
-- [ ] **[Test]** `RealtimeRepository` 테스트
-    - [ ] 데이터 소스에서 데이터를 가져와 Domain Model로 매핑하는 로직 검증
-    - [ ] `Result<T>` (Success/Failure) 래퍼 클래스 처리 로직 검증
-- [ ] `RealtimeSubwayRepositoryImpl` 구현
+### 2.3 Repository (API -> Domain)
+- [x] Domain Model(`RealtimeArrival`) 및 Repository Interface 정의
+- [x] **[Test]** Repository 유닛 테스트 (MockK)
+    - [x] API 성공 시 Domain Model 매핑 검증
+    - [x] API 실패/예외 처리 검증
+- [x] `RealtimeRepositoryImpl` 구현
+    - [x] `Result` (RunCatching) 패턴 적용하여 에러 핸들링구현
 
 ## 3. 도메인 레이어 (Pure Kotlin)
 > **목표**: 비즈니스 로직(예: 칸 추천 알고리즘)을 순수 코틀린 코드로 작성하고 테스트.
