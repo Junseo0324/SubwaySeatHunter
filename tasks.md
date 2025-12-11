@@ -62,23 +62,21 @@
 - [x] `RealtimeRepositoryImpl` 구현
     - [x] `Result` (RunCatching) 패턴 적용하여 에러 핸들링구현
 
-## 3. 도메인 레이어 (Pure Kotlin)
-> **목표**: 비즈니스 로직(예: 칸 추천 알고리즘)을 순수 코틀린 코드로 작성하고 테스트.
+## 3. UI 레이어 (Presentation) 구현
+> **목표**: ViewModel에서 Repository를 직접 호출하여 데이터를 관리하고, Compose UI로 화면 구현.
+> **구조**: `Repository` -> `ViewModel` -> `Compose UI`
 
-- [ ] **UseCases** 정의
-- [ ] **[Test]** `GetNearestStationUseCase` 테스트 (위치 알고리즘)
-- [ ] **[Test]** `GetCongestionForecastUseCase` 테스트 (통계 + 실시간 결합 로직)
-- [ ] UseCase 구현
+### 3.1 MainViewModel 구현
+- [x] **[Test]** ViewModel 유닛 테스트
+    - [x] `StationRepository`와 `RealtimeRepository` 호출 검증
+    - [x] `StateFlow` 상태 업데이트 검증 (Loading, Success, Error)
+- [x] `MainViewModel` 클래스 구현
+    - [x] 검색어 입력 시 `Station` 필터링 로직
+    - [x] 역 선택 시 `RealtimeArrival` 조회 로직
 
-## 4. UI 레이어 (Presentation)
-> **목표**: 실제 UI 구현 전 ViewModel 로직 테스트.
-
-- [ ] **[Test]** MainViewModel 테스트
-    - [ ] UseCase 결과를 `StateFlow` 상태로 잘 변환하는지 검증 (Loading -> Success/Error)
-- [ ] UI 컴포넌트 구현 (Compose/XML)
-    - [ ] 메인 화면
-    - [ ] 상세 화면
-
-## 5. 통합 및 E2E 테스트
-- [ ] Hilt 의존성 주입 확인
+### 3.2 UI Screen 구현 (Compose)
+- [ ] `NavHost` 및 화면 전환 설정
+- [ ] **[MainScreen]** 지하철역 검색 및 리스트 표시
+- [ ] **[DetailScreen]** 선택한 역의 실시간 도착 정보 표시
+- [ ] (디자인) 2호선 테마 컬러 및 직관적인 UI 적용의존성 주입 확인
 - [ ] 핵심 사용자 시나리오(Happy Path) UI 테스트

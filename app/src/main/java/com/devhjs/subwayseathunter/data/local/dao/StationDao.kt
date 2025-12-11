@@ -13,6 +13,9 @@ interface StationDao {
 
     @Query("SELECT * FROM stations WHERE stationName = :name")
     suspend fun getStationsByName(name: String): List<StationEntity>
+
+    @Query("SELECT * FROM stations WHERE stationName LIKE '%' || :query || '%'")
+    suspend fun searchStations(query: String): List<StationEntity>
     
     @Query("SELECT * FROM stations")
     suspend fun getAllStations(): List<StationEntity>
