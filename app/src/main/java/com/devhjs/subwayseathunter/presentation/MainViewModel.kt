@@ -77,4 +77,9 @@ class MainViewModel @Inject constructor(
     fun clearError() {
         _uiState.update { it.copy(errorMessage = null) }
     }
+
+    // 선택 해제
+    fun clearSelection() {
+        _uiState.update { it.copy(selectedStation = null, realtimeArrivals = emptyList()) }
+    }
 }

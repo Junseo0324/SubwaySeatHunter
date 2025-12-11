@@ -75,8 +75,8 @@
     - [x] 역 선택 시 `RealtimeArrival` 조회 로직
 
 ### 3.2 UI Screen 구현 (Compose)
-- [ ] `NavHost` 및 화면 전환 설정
-- [ ] **[MainScreen]** 지하철역 검색 및 리스트 표시
-- [ ] **[DetailScreen]** 선택한 역의 실시간 도착 정보 표시
-- [ ] (디자인) 2호선 테마 컬러 및 직관적인 UI 적용의존성 주입 확인
+- [x] `NavHost` 및 화면 전환 설정
+- [x] **[MainScreen]** 지하철역 검색 및 리스트 표시
+- [x] **[DetailScreen]** 선택한 역의 실시간 도착 정보 표시 (BottomSheet)
+- [x] (디자인) 2호선 테마 컬러 및 직관적인 UI 적용의존성 주입 확인
 - [ ] 핵심 사용자 시나리오(Happy Path) UI 테스트
