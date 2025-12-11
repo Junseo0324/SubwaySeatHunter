@@ -1,3 +1,6 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -38,6 +41,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     packaging {
         resources {
@@ -47,6 +51,14 @@ android {
         }
     }
 }
+
+val secretsPropertiesFile = rootProject.file("secrets.properties")
+val secretsProperties = Properties()
+if (secretsPropertiesFile.exists()) {
+    secretsProperties.load(FileInputStream(secretsPropertiesFile))
+}
+
+android.defaultConfig.buildConfigField("String", "REALTIME_API_KEY", "\"${secretsProperties["REALTIME_API_KEY"]}\"")
 
 dependencies {
     implementation(libs.androidx.core.ktx)

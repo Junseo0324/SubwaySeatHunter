@@ -30,33 +30,37 @@
 - [x] `AppDatabase` 및 DAO 구현 (`StationDao`, `CongestionDao`)
 
 ### 1.3 Repository (CSV -> DB 적재)
-- [ ] **[Test]** `StationRepository` 초기 데이터 로드 테스트
-    - [ ] "DB가 비어있을 때 CSV 파싱 후 저장하는가?" 시나리오 검증
-    - [ ] Repository가 Domain Model로 올바르게 변환하여 반환하는지 검증
-- [ ] `StationRepositoryImpl` 구현
-    - [ ] `RoomCallback` 또는 `Worker`를 통한 초기 데이터 시딩(Seeding) 로직
+- [x] Domain Model 및 Repository Interface 정의
+- [x] **[Test]** `StationRepository` 초기 데이터 로드 테스트
+    - [x] "DB가 비어있을 때 CSV 파싱 후 저장하는가?" 시나리오 검증
+    - [x] Repository가 Domain Model로 올바르게 변환하여 반환하는지 검증
+- [x] `StationRepositoryImpl` 구현
+- [x] `RoomCallback` 또는 `Worker`를 통한 초기 데이터 시딩(Seeding) 로직
 
 ## 2. 실시간 데이터 레이어 (Network) 구현
 > **목표**: 서울시 API 연동. MockWebServer를 사용하여 네트워크 응답 케이스(성공, 실패, 이상한 데이터)를 확실하게 테스트.
 
 ### 2.1 API 모델 및 파싱
-- [ ] API JSON 응답 스펙 분석 및 JSON 샘플 파일 확보
-- [ ] **[Test]** DTO 파싱 테스트
-    - [ ] Moshi/Gson 어댑터 동작 확인
-    - [ ] Null Field 처리 및 Default Value 확인
-- [ ] `SubwayArrivalResponse` DTO 구현
+- [x] API JSON 응답 스펙 분석 및 JSON 샘플 파일 확보
+- [x] **[Test]** DTO 파싱 테스트
+    - [x] Moshi/Gson 어댑터 동작 확인
+    - [x] Null Field 처리 및 Default Value 확인
+- [x] `SubwayArrivalResponse` DTO 구현
 
 ### 2.2 Retrofit Service (MockWebServer)
-- [ ] **[Test]** Retrofit Service 유닛 테스트
-    - [ ] `MockWebServer`로 200 OK 응답 시 호출 성공 검증
-    - [ ] 40x, 50x 에러 응답 시 예외 처리 검증
-- [ ] `SubwayApiService` 인터페이스 및 Retrofit Client 구현 (`OkHttp` Interceptor 설정 포함)
+- [x] **[Test]** Retrofit Service 유닛 테스트
+    - [x] MockWebServer로 가짜 응답(200 OK) 내려주기
+    - [x] 요청 URL 및 파라미터 검증 (`apiKey`, `stationName`)
+- [x] `SubwayApiService` 인터페이스 정의
+- [x] Hilt `NetworkModule` 설정 (OkHttp, Retrofit, Moshi)
 
-### 2.3 RemoteDataSource & Repository
-- [ ] **[Test]** `RealtimeRepository` 테스트
-    - [ ] 데이터 소스에서 데이터를 가져와 Domain Model로 매핑하는 로직 검증
-    - [ ] `Result<T>` (Success/Failure) 래퍼 클래스 처리 로직 검증
-- [ ] `RealtimeSubwayRepositoryImpl` 구현
+### 2.3 Repository (API -> Domain)
+- [x] Domain Model(`RealtimeArrival`) 및 Repository Interface 정의
+- [x] **[Test]** Repository 유닛 테스트 (MockK)
+    - [x] API 성공 시 Domain Model 매핑 검증
+    - [x] API 실패/예외 처리 검증
+- [x] `RealtimeRepositoryImpl` 구현
+    - [x] `Result` (RunCatching) 패턴 적용하여 에러 핸들링구현
 
 ## 3. 도메인 레이어 (Pure Kotlin)
 > **목표**: 비즈니스 로직(예: 칸 추천 알고리즘)을 순수 코틀린 코드로 작성하고 테스트.
