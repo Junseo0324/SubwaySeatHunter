@@ -12,7 +12,12 @@ class RealtimeRepositoryImpl @Inject constructor(
 
     override suspend fun getRealtimeArrivals(stationName: String): Result<List<RealtimeArrival>> {
         return try {
-            val response = apiService.getRealtimeStationArrivals(BuildConfig.REALTIME_API_KEY, stationName)
+            val response = apiService.getRealtimeStationArrivals(
+                apiKey = BuildConfig.REALTIME_API_KEY,
+                startIndex = 1, // 서울시 API는 보통 1부터 시작
+                endIndex = 10,  // 넉넉하게 10개 조회
+                stationName = stationName
+            )
             if (response.isSuccessful) {
                 val body = response.body()
                 val arrivalList = body?.realtimeArrivalList?.map { dto ->

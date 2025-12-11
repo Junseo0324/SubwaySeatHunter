@@ -35,7 +35,7 @@ class RealtimeRepositoryTest {
             errorMessage = null,
             realtimeArrivalList = listOf(arrivalDto)
         )
-        coEvery { apiService.getRealtimeStationArrivals(any(), "Gangnam") } returns Response.success(apiResponse)
+        coEvery { apiService.getRealtimeStationArrivals(any(), any(), any(), "Gangnam") } returns Response.success(apiResponse)
 
         // When
         val result = repository.getRealtimeArrivals("Gangnam")
@@ -51,7 +51,7 @@ class RealtimeRepositoryTest {
     @Test
     fun `getRealtimeArrivals returns failure on api error`() = runBlocking {
         // Given
-        coEvery { apiService.getRealtimeStationArrivals(any(), "Gangnam") } returns Response.error(404, "Not Found".toResponseBody())
+        coEvery { apiService.getRealtimeStationArrivals(any(), any(), any(), "Gangnam") } returns Response.error(404, "Not Found".toResponseBody())
 
         // When
         val result = repository.getRealtimeArrivals("Gangnam")
@@ -64,7 +64,7 @@ class RealtimeRepositoryTest {
     @Test
     fun `getRealtimeArrivals handles exception during api call`() = runBlocking {
         // Given
-        coEvery { apiService.getRealtimeStationArrivals(any(), "Gangnam") } throws RuntimeException("Network Error")
+        coEvery { apiService.getRealtimeStationArrivals(any(), any(), any(), "Gangnam") } throws RuntimeException("Network Error")
 
         // When
         val result = repository.getRealtimeArrivals("Gangnam")

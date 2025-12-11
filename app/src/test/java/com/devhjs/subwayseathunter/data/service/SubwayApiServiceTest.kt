@@ -73,12 +73,12 @@ class SubwayApiServiceTest {
         mockWebServer.enqueue(MockResponse().setBody(mockResponse))
 
         // When
-        val response = apiService.getRealtimeStationArrivals("TEST_KEY", "Gangnam")
+        val response = apiService.getRealtimeStationArrivals("TEST_KEY", 1, 5, "Gangnam")
 
         // Then
         // 1. Verify Request
         val request = mockWebServer.takeRequest()
-        assertThat(request.path).isEqualTo("/api/subway/TEST_KEY/json/realtimeStationArrival/0/5/Gangnam")
+        assertThat(request.path).isEqualTo("/api/subway/TEST_KEY/json/realtimeStationArrival/1/5/Gangnam")
         assertThat(request.method).isEqualTo("GET")
 
         // 2. Verify Response
