@@ -41,11 +41,11 @@
 > **목표**: 서울시 API 연동. MockWebServer를 사용하여 네트워크 응답 케이스(성공, 실패, 이상한 데이터)를 확실하게 테스트.
 
 ### 2.1 API 모델 및 파싱
-- [ ] API JSON 응답 스펙 분석 및 JSON 샘플 파일 확보
-- [ ] **[Test]** DTO 파싱 테스트
-    - [ ] Moshi/Gson 어댑터 동작 확인
-    - [ ] Null Field 처리 및 Default Value 확인
-- [ ] `SubwayArrivalResponse` DTO 구현
+- [x] API JSON 응답 스펙 분석 및 JSON 샘플 파일 확보
+- [x] **[Test]** DTO 파싱 테스트
+    - [x] Moshi/Gson 어댑터 동작 확인
+    - [x] Null Field 처리 및 Default Value 확인
+- [x] `SubwayArrivalResponse` DTO 구현
 
 ### 2.2 Retrofit Service (MockWebServer)
 - [ ] **[Test]** Retrofit Service 유닛 테스트

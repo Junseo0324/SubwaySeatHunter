@@ -38,6 +38,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     packaging {
         resources {
@@ -47,6 +48,14 @@ android {
         }
     }
 }
+
+val secretsPropertiesFile = rootProject.file("secrets.properties")
+val secretsProperties = java.util.Properties()
+if (secretsPropertiesFile.exists()) {
+    secretsProperties.load(java.io.FileInputStream(secretsPropertiesFile))
+}
+
+android.defaultConfig.buildConfigField("String", "REALTIME_API_KEY", "\"${secretsProperties["REALTIME_API_KEY"]}\"")
 
 dependencies {
     implementation(libs.androidx.core.ktx)
