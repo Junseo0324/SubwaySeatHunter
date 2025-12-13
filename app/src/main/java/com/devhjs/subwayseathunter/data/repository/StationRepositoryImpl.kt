@@ -48,4 +48,17 @@ class StationRepositoryImpl @Inject constructor(
             )
         }
     }
+
+    override suspend fun searchStations(query: String): List<Station> {
+        return stationDao.searchStations(query).map { entity ->
+            Station(
+                stationName = entity.stationName,
+                lineName = entity.lineName,
+                stationCode = entity.stationCode,
+                lat = entity.lat,
+                lng = entity.lng,
+                transferInfo = entity.transferInfo
+            )
+        }
+    }
 }
