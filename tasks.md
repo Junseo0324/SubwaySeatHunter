@@ -78,5 +78,9 @@
 - [x] `NavHost` 및 화면 전환 설정
 - [x] **[MainScreen]** 지하철역 검색 및 리스트 표시
 - [x] **[DetailScreen]** 선택한 역의 실시간 도착 정보 표시 (BottomSheet)
-- [x] (디자인) 2호선 테마 컬러 및 직관적인 UI 적용의존성 주입 확인
+- [x] (디자인) 2호선 테마 컬러 및 직관적인 UI 적용
+- [x] **[Design]** UI 디자인 고도화
+    - [x] **MainScreen**: 검색바 스타일 개선 (Rounded, Shadow, Leading Icon)
+    - [x] **StationItem**: 카드 디자인 개선 (지하철 노선 아이콘, 화살표 등 시각적 요소 추가)
+    - [x] **DetailScreen**: 도착 정보 시각화 개선 (Timeline 스타일 or 중요 정보 강조)의존성 주입 확인
 - [ ] 핵심 사용자 시나리오(Happy Path) UI 테스트
